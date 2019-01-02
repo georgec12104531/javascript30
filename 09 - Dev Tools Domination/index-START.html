@@ -11,36 +11,77 @@
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
 
+    //Break On attribute modification
     function makeGreen() {
       const p = document.querySelector('p');
       p.style.color = '#BADA55';
       p.style.fontSize = '50px';
     }
 
+    const derp = "variable";
+
     // Regular
+    console.log("hi")
 
     // Interpolated
+    console.log(`hi this is the ${derp}`)
 
     // Styled
+    console.log('%c this is a stylized string', 'font-size: 50px; background: teal;')
 
     // warning!
+    console.warn("uh oh!!!")
 
     // Error :|
-
+    console.error("uh oh!!!")
     // Info
+    console.info('poop spelt backwards in poop, muahahahahaha!')
 
     // Testing
+    const p = document.querySelector('p')
+    console.assert(p.classList.contains('poop'), 'negative!')
 
     // clearing
+    console.clear()
 
     // Viewing DOM Elements
+    console.log("this is log", p)
+    console.dir(p) 
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`)
+      console.log(`This is ${dog.name}`)
+      console.log(`He is ${dog.age} years old`)
+      console.groupEnd(`${dog.name}`)
+    })
 
     // counting
+    console.count('George')
+    console.count('George')
+    console.count('George')
+    console.count('Charles')
+    console.count('Chang')
+    console.count('Charles')
+    console.count('Chang')
+    console.count('Chang')
+    console.count('Chang')
+    console.count('Charles')
+    console.count('Charles')
+    console.count('Charles')
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data')
+        console.log(data)
+      });
 
+    //table
+
+    console.table(dogs)
   </script>
 </body>
 </html>
