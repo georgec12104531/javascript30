@@ -10,16 +10,15 @@
 <script>
   const pressed = [];
   const secretCode = "george"
-    
-    window.addEventListener('keyup', (e) => {
-      console.log(e.key)
-      pressed.push(e.key);
-      pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
-      if (pressed.join("") === secretCode) {
-        console.log('YOU WIN!!!')
-        cornify_add();
-      }
-    });
+  window.addEventListener('keyup', (e) => {
+    console.log(e.key)
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+    if (pressed.join("") === secretCode) {
+      console.log('YOU WIN!!!')
+      cornify_add();
+    }
+  });
 </script>
 </body>
 </html>
