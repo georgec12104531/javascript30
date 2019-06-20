@@ -18,8 +18,6 @@
 
     console.log("name: ", name, "name2: ", name2);
     
-
-
     let num = 100;
     let num2 = 200;
 
@@ -29,6 +27,11 @@
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
+    console.log('players before: ', players);
+    // const team = players; 
+    // team[3] = "George";
+
+    // console.log('players: ', players, 'team: ', team);
     // and we want to make a copy of it.
 
     // You might think we can just do something like this:
@@ -50,6 +53,14 @@
     // or use the new ES6 Spread
 
     // now when we update it, the original one isn't changed
+
+    team2 = [...players];
+    team2[3] = "George"
+    console.log('players: ', players, 'team2: ', team2);
+
+    team3 = players.slice();
+    team3[3] = "George"
+    console.log(players, team3)
 
     // The same thing goes for objects, let's say we have a person object
 
