@@ -28,6 +28,7 @@
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
     console.log('players before: ', players);
+  
     // const team = players; 
     // team[3] = "George";
 
@@ -59,9 +60,12 @@
     console.log('players: ', players, 'team2: ', team2);
 
     team3 = players.slice();
-    team3[3] = "George"
-    console.log(players, team3)
+    team3[3] = "George";
+    console.log('players: ', players, 'team3', team3);
 
+    team4 = [].concat(players);
+    team4[3] = "George"
+    console.log('players: ', players, 'teame4', team4);
     // The same thing goes for objects, let's say we have a person object
 
     // with Objects
@@ -69,6 +73,15 @@
       name: 'Wes Bos',
       age: 80
     };
+
+    let george = person;
+    george.age = 90;
+    console.log('after', person);
+
+    copyObj = Object.assign({}, person, {age: 100});
+
+    console.log(copyObj)
+
 
     // and think we make a copy:
 
