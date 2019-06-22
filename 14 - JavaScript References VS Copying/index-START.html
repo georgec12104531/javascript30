@@ -66,6 +66,12 @@
     team4 = [].concat(players);
     team4[3] = "George"
     console.log('players: ', players, 'teame4', team4);
+
+    team5 = [...players];
+    team5[3] = "George";
+
+    console.log('players: ', players, 'team5', team5);
+
     // The same thing goes for objects, let's say we have a person object
 
     // with Objects
@@ -74,13 +80,32 @@
       age: 80
     };
 
+    console.log('before', person);
+
+
     let george = person;
     george.age = 90;
     console.log('after', person);
 
     copyObj = Object.assign({}, person, {age: 100});
 
-    console.log(copyObj)
+    const person2 = {...person};
+    console.log(person2);
+
+    const gc = {
+      name: 'George',
+      age: 24, 
+      details: {
+        website: 'georgecharleschang.com',
+        imdbeeg: 'beeg.com'
+      }
+    }
+
+    JSON.parse(JSON.stringify('{"result":true, "count":42}'))
+    //JSON.parse converts string objects into pojo
+    //JSON.parse converts object into a string 
+
+    const newGc = Object.assign({}, gc)
 
 
     // and think we make a copy:
