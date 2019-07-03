@@ -56,7 +56,14 @@
 
   }
 
+  function toggleDone(e) {
+    // Skip unless it's an input
+    if (!e.target.matches('input')) return; 
+    console.log(e.target)
+  }
+
   populateList(items, itemsList);
+  itemsList.addEventListener('click', toggleDone)
   addItems.addEventListener('submit', addItem)
 
 </script>
